@@ -7,7 +7,11 @@ class Solution:
         
         # step1: make k paris and sort ⇨ heapq.heappush()
         heap = []
-        
+
+        # cornercase: nums1 or nums2 is None
+        if nums1 is None or nums2 is None:
+            return None
+
         for n1 in nums1:
             for n2 in nums2:
                 if len(heap) < k:
