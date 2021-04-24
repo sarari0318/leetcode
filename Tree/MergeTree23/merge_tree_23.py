@@ -1,11 +1,23 @@
-class TreeNode:
-    def __init__(self, val=0, left=None, right=None):
-        self.val = val
-        self.left = left
-        self.right = right
-
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
 class Solution:
     def mergeTrees(self, t1: TreeNode, t2: TreeNode) -> TreeNode:
+        '''
+        This function returns the min depth of root(a binary tree).
+
+        Parameters
+        ------------------------
+            t1: TreeNode
+            t2: TreeNode
+
+        Returns
+        ------------------------
+            the merged tree of t1 and t2: TreeNode
+
+        '''
 
         if t1 is None and t2 is None:
             return None
