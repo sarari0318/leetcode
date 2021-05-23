@@ -1,5 +1,5 @@
 class Solution:
-    def rob(self, nums: List[int]) -> int:
+    def rob(self, nums):
         
         # rob or not at the N house(N=1, 2, 3 ,...)
         # ⇨ use Dynamic Programming
@@ -19,5 +19,5 @@ class Solution:
             # 1つ前までに盗んだ金銭の合計より大きければ、2つ前までに盗んだ金銭と今の家の金銭の合計
             # 1つ前までに盗んだ金銭の合計より小さければ、１つ前までに盗んだ合計を
             # dp[i] として記録する
-            dp[i] = dp[i - 2] + nums[i] if dp[i - 2] + nums[i] > dp[i - 1] else dp[i - 1]
+            dp[i] = max(dp[i - 2] + nums[i], dp[i - 1])
         return dp[-1]
