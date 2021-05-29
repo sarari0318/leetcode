@@ -6,4 +6,4 @@
 ## LinkedList  
   [1-0. LinkedList概要説明](https://qiita.com/ito0813sarari/private/dc4276541d35fbdfa8a2)  
   [1-1. Linked List Cycle (No. 141)](https://qiita.com/ito0813sarari/private/da72570c1697f90fce5a)  
-  1-2. Linked List Cycle (No. 142)  
+  [1-2. Linked List Cycle (No. 142)](https://qiita.com/ito0813sarari/private/9301a60b03907e45fd20)  
