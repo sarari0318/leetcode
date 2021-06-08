@@ -13,7 +13,8 @@
   [1-5. Add Two Numbers (No.2)](https://qiita.com/ito0813sarari/private/501fc6e409e222594a0a) 
 ## Stack 
   [1-6. Valid Parentheses (No. 20)](https://qiita.com/ito0813sarari/private/742e85b0ae19b7927900) \
-  [1-7. Reverse Linked List (No. 206)](https://qiita.com/ito0813sarari/private/60ee35ea1308f470892f) 
+  [1-7. Reverse Linked List (No. 206)](https://qiita.com/ito0813sarari/private/60ee35ea1308f470892f) \
+  [おまけ. オブジェクト指向について](https://qiita.com/ito0813sarari/private/46e77ba3ca6726af3958)
 
   
 
