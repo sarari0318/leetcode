@@ -15,7 +15,8 @@
   [1-6. Valid Parentheses (No. 20)](https://qiita.com/ito0813sarari/private/742e85b0ae19b7927900) \
   [1-7. Reverse Linked List (No. 206)](https://qiita.com/ito0813sarari/private/60ee35ea1308f470892f) \
   [【おまけ】 オブジェクト指向１(クラスとインスタンス)](https://qiita.com/ito0813sarari/private/46e77ba3ca6726af3958) \
-  [1-8. Kth Largest Element in a Stream](https://qiita.com/ito0813sarari/private/db7d63f6aa6e783f5b0f)
+  [1-8. Kth Largest Element in a Stream](https://qiita.com/ito0813sarari/private/db7d63f6aa6e783f5b0f) \
+  [1-9. Top K Frequent Elements](https://qiita.com/ito0813sarari/private/744d17235fcf017fb0ee)
   
 
   
