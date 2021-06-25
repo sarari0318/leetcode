@@ -22,7 +22,8 @@
   [3-2. Top K Frequent Elements](https://qiita.com/ito0813sarari/private/744d17235fcf017fb0ee) 
   
 ## 4. HashMap
-  [4-1. Two Sum](https://qiita.com/ito0813sarari/private/466f1ba87e5e88e1f6cc)
+  [4-1. Two Sum](https://qiita.com/ito0813sarari/private/466f1ba87e5e88e1f6cc) \
+  [4-2. Group Anagrams](https://qiita.com/ito0813sarari/private/d1b44badde740abc8219)
   
 
   
