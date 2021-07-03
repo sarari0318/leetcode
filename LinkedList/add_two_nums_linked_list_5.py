@@ -5,13 +5,21 @@
 class Solution:
     def addTwoNumbers(self, l1: ListNode, l2: ListNode) -> ListNode:
 
-        # Assuming two non-empty linked list, so don't have to think about this case
-        # if l1 is None and l2 is None:
-        #     return None
+        '''
+        Parameters
+        ----------
+            l1: ListNode 
+            l2: ListNode 
+        Returns
+        -------
+            dummy.next: ListNode
+            ⇨ add the two numbers and return the sum as a linked list.
+        '''
 
+        # ダミーノードを生成
         dummy = ListNode()
         cur = dummy
-
+        # 繰り上げる値
         carry = 0
 
         while l1 or l2 or carry:
@@ -19,11 +27,8 @@ class Solution:
             total += l1.val if l1 else 0
             total += l2.val if l2 else 0
 
-            if total >= 10:
-                carry = 1
-                total -= 10
-            else:
-                carry = 0
+            # totalを10で割った商をcarry, 余りをtotalへ
+            carry, total = divmod(total, 10)
 
             cur.next = ListNode(total)
             cur = cur.next

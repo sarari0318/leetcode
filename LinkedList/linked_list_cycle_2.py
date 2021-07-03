@@ -6,31 +6,17 @@
 class Solution:
     def detectCycle(self, head: ListNode) -> ListNode:
         
-        # return the node where the cycle begins
-        # Pre: head
-        # Post: node
+        '''
+        Parameters
+        ----------
+            head: ListNode 
+        Returns
+        -------
+            head: ListNode
+            ⇨ return the node where the cycle begins. If there is no cycle, return null.
+        '''
         
-        # x: from head to the node where the cycle begin(cy_begin)
-        # y: from cy_begin to the node where slow == fast(overlap)
-        # z: from overlap to tail
-        # ⇨ 2(x+y) = x+y+z+y
-        # ⇨ x = z
-        
-        # first step: find the node where fast overlap slow
-        # second step: find the node where slow overlap head
-        
-        # testcase:
-        # first step!!
-        # fast: 3, slow: 3
-        # fast: 0, slow: 2
-        # fast: 2, slow: 0
-        # fast: -4, slow: -4 ⇨ the node where fast overlap slow!!!
-        
-        # second step!!
-        # slow: -4, head: 3
-        # slow: 2, head: 2 ⇨ the node where slow overlap head!!!
-        # return this node!!
-        
+        # 進む速さの異なる２つのポインタを用意
         slow = fast = head
         
         while fast and fast.next:
@@ -40,12 +26,15 @@ class Solution:
             if slow == fast:
                 break
         
+        # そもそもCycleが存在しなければ、
         else:
             return None
-                
+          
+        # 「始点からCycleの始まりのノードまでの距離」 と
+        # 「slowとfastの合流点から端までの距離」 が等しいので、
+        # heahを始点から、slowをfastとの合流点からそれぞれスタート      
         while head != slow:
             head = head.next
             slow = slow.next
-            
-        
+                
         return head
