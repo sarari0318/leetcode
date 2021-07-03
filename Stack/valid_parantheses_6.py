@@ -1,38 +1,33 @@
 class Solution:
     def isValid(self, s: str) -> bool:
+              
+        '''
+        Parameters
+        ----------
+            s: str
+        Returns
+        -------
+            bool
+            ⇨ determine if the input string is valid.
+
+            valid input example: "()", "()[]{}", "{[]}"
+            invalid input example: "(]", "([)]"
+        '''
         
-        # testcase1: s = "()[]{}"
-        # char = "(" ⇨ stack["("]
-        # char = ")" ⇨ stack[ ]
-        # char = "[" ⇨ stack["["]
-        # char = "]" ⇨ stack[ ]
-        # char = "{" ⇨ stack["{"]
-        # char = "}" ⇨ stack[ ]
-        # return True
-        
-        # testcase2: s = "(]"
-        # char = "(" ⇨ stack["("]
-        # char = "]" ⇨ stack["(", "]"]
-        # return False
-        
-        # cornercase: s is None
-        if s is None:
-            return False
-        
-        # step1: create dictionary
-        dict = {')':'(', '}':'{', ']':'['}
+        # Parenthesesの対照表
+        parent_table = {')':'(', '}':'{', ']':'['}
         stack = []
         
-        # step2: linear scan from left to right
         for char in s:
-            if char in dict.values():
+            # もしcharが左側の括弧である時、
+            if char in parent_table.values():
                 stack.append(char)
             
-            elif char in dict.keys():
-                if dict[char] in stack:
-                    stack.pop()
-                else:
-                    return False
-            print(stack)
-                
+            # もしcharが右側の括弧である時、
+            else:
+                # stackが空
+                # もしくは 
+                # stackの最後の要素が charに対応する左側の括弧でなければ、
+                if stack == [] or parent_table[char] != stack.pop():
+                    return False     
         return stack == []
