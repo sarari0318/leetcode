@@ -1,28 +1,24 @@
 class Solution:
     def topKFrequent(self, nums: List[int], k: int) -> List[int]:
         
-        # cornercase: this array is non-empyt, so don't have to think about this case
+        '''
+        Parameters
+        ----------
+            nums: List[int]
+            k: int
+        Returns
+        -------
+            List[int]
+            ⇨ return k numbers of the most frequent elements
         
-        # return k numbers of the most frequent elements
-        # pre: nums, k
-        # post: the k most frequent elements
-        
-        # counter, count_heap = {}, []
-        # step1: count the number of each element
-        # for num in nums:
-        #     if num not in counter.keys():
-        #         counter[num] = 1
-        #     else:
-        #         counter[num] += 1
-        # ⇨ sumarize
-        
+        '''
+
+        # 各要素とその数を記録
         counter = collections.Counter(nums)
-        count_heap = []
-        
-        for key, val in counter.items():
-            count_heap.append((-val, key))
-            
-        heapq.heapify(count_heap)
-        
-        # step2: return the res array including the elements
-        return [heapq.heappop(count_heap)[1] for _ in range(k) if count_heap]
+
+        for num, count in counter.items():
+            # countの多い順に並べたいが、heapは値が小さい順に並べるので、
+            # -countをタプルの１つ目の要素とし、要素数の多い順に並べる
+            heapq.heappush(num_counter, (-count, num))
+
+        return [heapq.heappop(num_counter)[1] for _ in range(k)]
