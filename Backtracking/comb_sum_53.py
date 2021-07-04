@@ -1,7 +1,19 @@
 class Solution:
-    def combinationSum(self, candidates: List[int], target: int) -> List[List[int]]:
+    def combinationSum(self, candidates, target):
+
+        '''
+         Parameters
+        ----------
+            candidates: List[int]
+            target: int 
+        Returns
+        -------
+            res: List[List[int]]
+            ⇨ return a list of all unique combinations of candidates where the chosen numbers sum to target.
+        '''
         
-        candidates = sorted(candidates)
+        # candidatesをソート化
+        candidates.sort()
         res = []
         self.backtracking(res, candidates, target, [], 0)
         return res
@@ -10,44 +22,16 @@ class Solution:
     def backtracking(self, res, candidates, target, comb, start):
         
         for i in range(start, len(candidates)):
-            if candidates[i] == target:
+            # i番目の要素がtargetの値を超えてしまえば、break
+            if candidates[i] > target:
+                break
+            # i番目の要素がtargetの値と等しければ、resにcombを追加
+            elif candidates[i] == target:
                 comb.append(candidates[i])
                 res.append(list(comb))
+            # i番目の要素がtargetの値より小さければ、
             else:
-                if candidates[i] > target:
-                    break
+                # 引き続きcombに要素を追加し、その組み合わせの合計がtargetに等しくなるかチェック
                 comb.append(candidates[i])
                 self.backtracking(res, candidates, target - candidates[i], comb, i)
             comb.pop()
-
-
-        '''
-        流れ
-        
-        res = []
-        2, 2, 2, 2 > 7
-                 終 3, 6, 7
-        
-        2, 2, 3 == 7 ⇨ res.append([2, 2, 3])
-              終 6, 7
-        
-        2, 2, 6 > 7
-              終 7 
-        
-        2, 3, 3 > 7
-              終 6, 7
-            
-        2, 6 > 7
-           終 7
-            
-        3, 3, 3 > 7
-              終 6, 7
-        
-        3, 6 > 7
-           終 7
-            
-        6, 6 > 7
-           終 7
-            
-        7 == 7 ⇨ res.qppend([7])
-        '''
