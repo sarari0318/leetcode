@@ -1,7 +1,16 @@
 class Solution:
-    def uniquePaths(self, m: int, n: int) -> int:
-        if not m or not n:
-            return 0
+    def uniquePaths(self, m: int, n: int):
+
+        '''
+        Parameters
+        ----------
+            m: int
+            n: int
+        Returns
+        -------
+            int
+            ⇨ return the num of possible unique paths of a m x n grid.
+        '''
 
         dp = [0] * n
         dp[0] = 1
@@ -11,7 +20,3 @@ class Solution:
                 dp[col] += dp[col-1]
 
         return dp[-1]
-
-if __name__ == "__main__":
-    solution = Solution()
-    print(solution.uniquePaths(3, 7))

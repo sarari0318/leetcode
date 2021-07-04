@@ -1,5 +1,16 @@
 class Solution:
     def maxProfit(self, prices):
+
+        '''
+        Parameters
+        ----------
+            prices: List[int]
+        Returns
+        -------
+            int
+            ⇨ return the maximum profit you can achieve from this transaction. 
+            If you cannot achieve any profit, return 0.
+        '''
         
         days = len(prices)
         

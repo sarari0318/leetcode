@@ -9,15 +9,27 @@ n(柵の数) and k(色の数) are non-negative integers.
 class Solution:
     def numWays(self, n, k):
 
+        '''
+        Params:
+            n: int
+            k: int
+        Returns:
+            int
+            return the total number of ways you can paint the fence.
+        '''
+
+        # 柵の数が0の時
         if n == 0:
             return 0
 
         elif n == 1:
             return k
 
-        # 同じ色が２つ並ぶ時
+        # 同じ色の柵が２つ並ぶ時
+        # (k通りの色のパターン)×(１つ前と同じ色のパターン数)
         same = k * 1
          # 違う色が２つ並ぶ時
+         # (k通りの色のパターン)×(１つ前とは異なる色のパターン数)
         diff = k * (k - 1)
 
         if n == 2:

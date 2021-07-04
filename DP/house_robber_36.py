@@ -1,8 +1,15 @@
 class Solution:
     def rob(self, nums):
         
-        # rob or not at the N house(N=1, 2, 3 ,...)
-        # ⇨ use Dynamic Programming
+        '''
+        Parameters
+        ----------
+            nums: List[int]
+        Returns
+        -------
+            int
+            ⇨ return the maximum amount of money you can rob tonight without alerting the police.
+        '''
         
         house_num = len(nums)
         
