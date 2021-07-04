@@ -1,13 +1,23 @@
 import collections
 
 class Solution:
-    def firstUniqChar(self, s: str) -> int:
+    def firstUniqChar(self, s):
+
+        '''
+        Parameters
+        ----------
+            s: str
+        Returns
+        -------
+            int
+            ⇨ return the first non-repeating character in it and return its index. 
+            If it does not exist, return -1.
+        '''
         
-        if s is None or s == "":
-            return -1
-        
+        # sに含まれる各スペルの数を記録するhashmap
         counter = collections.Counter(s)
         
+        # 固有のスペルのindexを記録するリスト
         indexes = []
         for key, val in counter.items():
             if val == 1:

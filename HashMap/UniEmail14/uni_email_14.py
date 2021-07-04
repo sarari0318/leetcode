@@ -1,18 +1,32 @@
 class Solution:
     def numUniqueEmails(self, emails):
+
+        '''
+        Parameters
+        ----------
+            emails: List[str]
+        Returns
+        -------
+            int
+            ⇨ return the number of different addresses that actually receive mails.
+        '''
         
-        if emails is None:
-            return 0
-        
+        # 固有のアドレスを記録する
         mails = set()
         
         for email in emails:
+            # local_nameとdomain_nameに分割
             local_name, domain_name = email.split('@')[0], email.split('@')[1]
-            if "+" in local_name:
-                local_name = local_name.split("+")[0]
-            if "." in local_name:
+            # '+'が存在すれば、
+            if '+' in local_name:
+                # '+'以降のlocal_nameの部分を省く
+                local_name = local_name.split('+')[0]
+            # '.'が存在すれば、
+            if '.' in local_name:
+                # '.'を取り除く
                 local_name = ''.join(local_name.split('.'))
-            mail = local_name + "@" + domain_name
+            # emailアドレスの形式に変換
+            mail = local_name + '@' + domain_name
             mails.add(mail)
             
         return len(mails)
