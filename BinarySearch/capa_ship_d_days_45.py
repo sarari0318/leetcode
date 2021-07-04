@@ -9,21 +9,12 @@ class Solution:
         Returns
         ==============
             min_pack: int
-            
-        最小の容量を見つける
-        
-        １日当たりの積載量として考えられる範囲は、
-            最小値：weightsの中で最も重い荷物の重量
-            最大値：全ての重さの合計
-        ⇨ この中から、daysの日数で全ての荷物を運び終えるのに必要な
-          最軽積載量を求める！
-          
-        ⇨ 小さい値から大きい値へと順に並んでおり、
-          最小値を求める問題
-        ⇨ Binary-Search使えるんじゃね！？
-        ⇨ 試してみる！
+            ⇨ return the least weight capacity of the ship that will 
+            result in all the packages on the conveyor belt being shipped within days days.
         '''
         
+        # １日あたりの積載量の最小値を一番重い荷物の重さ
+        #                  最大値を全ての荷物の重さの合計とする
         left, right = max(weights), sum(weights)
         
         while left < right:

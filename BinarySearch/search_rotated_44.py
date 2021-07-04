@@ -1,9 +1,14 @@
 class Solution:
-    def search(self, nums: List[int], target: int) -> int:
-        '''
-        求められている答え
-        ⇨ 回転したsorted listであるnumsの中から、targetのindexを求める
+    def search(self, nums, target):
         
+        '''
+        Params:
+            nums: List[int]
+            target: int
+        Returns:
+            int
+            return the index of target if it is in nums, or -1 if it is not in nums.
+
         ① [1,2,3,4,5] 完全なソート
         ② [2,3,4,5,1] ソートが左半分に偏る
         ③ [4,5,1,2,3] ソートが右半分に偏る
