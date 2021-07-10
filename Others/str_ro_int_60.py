@@ -15,26 +15,41 @@ MAX_INT = 2**31-1
 MIN_INT = -(2**31)
 
 class Solution:
-    def myAtoi(self, string: str) -> int:
+    def myAtoi(self, string):
+        '''
+        Parameters
+        ----------
+            string: str
+            'string' consists of English letters (lower-case and upper-case),
+                   digits (0-9), ' ', '+', '-', and '.'.
+        Returns
+        -------
+            int
+            ⇨ return the number included in string as integer.
+        '''
 
+        # stringの無駄なスペースを削除
         s = string.lstrip(' ')
         if not s:
             return 0
-        
+
+        # 正負を判別する変数
         sign = -1 if s[0] == "-" else 1
+
         if sign != 1 or s[0] == "+":
             s = s[1:]
-            
+
         res = 0
-        for c in s:
-            if c not in MAPPING:
+        for char in s:
+            if char not in MAPPING:
                 return self.limit(res * sign)
-            
+
+            # 次の桁へ
             res *= 10
-            res += MAPPING[c]
-            
+            res += MAPPING[char]
+
         return self.limit(res * sign)
-    
+
     def limit(self, x: int) -> int:
         if x > MAX_INT:
             return MAX_INT
