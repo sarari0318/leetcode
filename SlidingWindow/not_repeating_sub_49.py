@@ -1,7 +1,19 @@
 class Solution:
     def lengthOfLongestSubstring(self, s: str) -> int:
 
+        '''
+        Parameters
+        ----------
+            s: str
+        Returns
+        -------
+            int
+            ⇨ return the length of the longest substring without repeating characters.
+        '''
+
+        # sの各要素のindexを記録
         seen = {}
+        # countでsubstringの長さを記録
         count, last = 0, 0
 
         for i in range(len(s)):
